@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" modified="2026-10-02T22:05:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="Movie-Kiosk-Domain-Model" name="Movie-Kiosk-Domain-Model">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1"
+      connect="1" arrows="1" fold="1" page="1" pageScale="1"
+      pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Movie Theater Ticket Kiosk — UML Domain Model" style="text;html=1;align=center;verticalAlign=middle;fontSize=24;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="390" y="30" width="820" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="movie" value="&lt;div style=&#x27;text-align:center&#x27;&gt;&lt;b&gt;Movie&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;movieId&lt;br/&gt;title" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=16;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="130" width="220" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="showtime" value="&lt;div style=&#x27;text-align:center&#x27;&gt;&lt;b&gt;Showtime&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;showtimeId&lt;br/&gt;startTime" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=16;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="130" width="220" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="seat" value="&lt;div style=&#x27;text-align:center&#x27;&gt;&lt;b&gt;Seat&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;seatNumber&lt;br/&gt;status" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=16;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="130" width="220" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="customer" value="&lt;div style=&#x27;text-align:center&#x27;&gt;&lt;b&gt;Customer&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;customerId&lt;br/&gt;name" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=16;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="525" width="220" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="ticket" value="&lt;div style=&#x27;text-align:center&#x27;&gt;&lt;b&gt;Ticket&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;ticketId&lt;br/&gt;price" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=16;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="525" width="220" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="payment" value="&lt;div style=&#x27;text-align:center&#x27;&gt;&lt;b&gt;Payment&lt;/b&gt;&lt;/div&gt;&lt;hr/&gt;paymentId&lt;br/&gt;amount" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;fontSize=16;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="525" width="220" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="r1" value="has" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="movie" target="showtime">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r2" value="has" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="showtime" target="seat">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r3" value="purchases" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="customer" target="ticket">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r4" value="has" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="ticket" target="payment">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r5" value="is for" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="ticket" target="showtime">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="r6" value="reserves" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeWidth=2;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="555" as="sourcePoint"/>
+            <mxPoint x="1010" y="275" as="targetPoint"/>
+            <Array as="points"><mxPoint x="820" y="555"/><mxPoint x="820" y="360"/><mxPoint x="1010" y="360"/></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="325" y="175" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m12" value="0..*" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="445" y="175" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m21" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="725" y="175" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m22" value="0..*" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="845" y="175" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m31" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="325" y="605" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m32" value="0..*" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="445" y="605" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m41" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="725" y="605" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m42" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="845" y="605" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m51" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="555" y="480" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m52" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="555" y="300" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m61" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="745" y="530" width="50" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="m62" value="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="985" y="300" width="50" height="24" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
